@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const users = require('./app/users');
+const tasks = require('./app/tasks');
 
 const app = express();
 const port = 8000;
@@ -19,6 +20,7 @@ const run = async () => {
     });
 
     app.use('/users', users);
+    app.use('/tasks', tasks);
 
     app.listen(port, () => {
         console.log(`HTTP Server started on ${port} port!`);
