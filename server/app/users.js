@@ -37,4 +37,10 @@ router.post('/sessions', async (req, res) => {
     return res.send({token: user.token});
 });
 
+router.get('/', async (req, res) => {
+    const users = await User.find();
+
+    res.send(users);
+});
+
 module.exports = router;
